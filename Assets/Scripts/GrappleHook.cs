@@ -61,6 +61,7 @@ public class GrappleHook : MonoBehaviour
             }
             else
             {
+                transform.position = new Vector2(0, -100);
                 gameObject.GetComponent<Renderer>().enabled = false;
                 grapplerStick = false;
             }
