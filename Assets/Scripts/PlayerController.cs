@@ -33,13 +33,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float maxSpeed;
     [SerializeField]
-    bool doubleJumpActive;
+    public bool doubleJumpActive;
     [SerializeField]
-    bool dashActive;
+    public bool dashActive;
     [SerializeField]
-    bool chargeJumpActive;
+    public bool chargeJumpActive;
     [SerializeField]
-    bool grapplerActive;
+    public bool grapplerActive;
 
     public GameObject grappler;
     public GrappleHook GrappleHook;
@@ -274,17 +274,17 @@ public class PlayerController : MonoBehaviour
         {
             isOnGround = false;
         }
-        if (collision.gameObject.CompareTag("Killzone"))
-        {
-            transform.position = new Vector2(xSpawn, ySpawn);
-            deaths++;
-        }
-        if (collision.gameObject.CompareTag("Checkpoint"))
-        {
-            isOnGround = false;
-            xSpawn = collision.transform.position.x;
-            ySpawn = collision.transform.position.y + 10;
-        }
+        // if (collision.gameObject.CompareTag("Killzone"))
+        // {
+        //     transform.position = new Vector2(xSpawn, ySpawn);
+        //     deaths++;
+        // }
+        // if (collision.gameObject.CompareTag("Checkpoint"))
+        // {
+        //     isOnGround = false;
+        //     xSpawn = collision.transform.position.x;
+        //     ySpawn = collision.transform.position.y + 10;
+        // }
         if (collision.gameObject.CompareTag("Grappler"))
         {
             Debug.Log("grappler");
@@ -302,36 +302,36 @@ public class PlayerController : MonoBehaviour
                     doubleJump = true;
             }
         }
-        if (collision.gameObject.CompareTag("Checkpoint"))
-        {
-            isOnGround = false;
-            if (doubleJumpActive)
-                doubleJump = true;
-        }
+        // if (collision.gameObject.CompareTag("Checkpoint"))
+        // {
+        //     isOnGround = false;
+        //     if (doubleJumpActive)
+        //         doubleJump = true;
+        // }
     }
 
     private void OnTriggerEnter2D(Collider2D collide)
     {
-        if (collide.gameObject.CompareTag("Slowzone"))
-        {
-            speed *= 0.5f;
-        }
-        if (collide.gameObject.CompareTag("Speedzone"))
-        {
-            speed *= 2;
-        }
+        // if (collide.gameObject.CompareTag("Slowzone"))
+        // {
+        //     speed *= 0.5f;
+        // }
+        // if (collide.gameObject.CompareTag("Speedzone"))
+        // {
+        //     speed *= 2;
+        // }
     }
 
     private void OnTriggerExit2D(Collider2D collide)
     {
-        if (collide.gameObject.CompareTag("Slowzone"))
-        {
-            speed *= 2;
-        }
-        if (collide.gameObject.CompareTag("Speedzone"))
-        {
-            speed *= 0.5f;
-        }
+        // if (collide.gameObject.CompareTag("Slowzone"))
+        // {
+        //     speed *= 2;
+        // }
+        // if (collide.gameObject.CompareTag("Speedzone"))
+        // {
+        //     speed *= 0.5f;
+        // }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -341,10 +341,10 @@ public class PlayerController : MonoBehaviour
             isOnGround = true;
             doubleJump = false;
         }
-        if (collision.gameObject.CompareTag("Checkpoint"))
-        {
-            isOnGround = true;
-            doubleJump = false;
-        }
+        // if (collision.gameObject.CompareTag("Checkpoint"))
+        // {
+        //     isOnGround = true;
+        //     doubleJump = false;
+        // }
     }
 }

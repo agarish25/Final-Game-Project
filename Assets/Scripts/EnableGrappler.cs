@@ -7,6 +7,8 @@ public class EnableGrappler : MonoBehaviour
 
     public GameObject Grappler;
     public GrappleHook GrappleHook;
+    public GameObject Inventory;
+    public InventoryItemData InventoryItemData;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,8 @@ public class EnableGrappler : MonoBehaviour
     {
         if (GrappleHook.grapplerEnabled)
         {
+            GrappleHook.grapplerEnabled = false;
+            InventoryItemData.grapplerActive = 1;
             Destroy(gameObject);
         }
     }
