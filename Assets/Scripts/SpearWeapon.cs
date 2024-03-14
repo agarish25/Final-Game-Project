@@ -52,11 +52,10 @@ public class SpearWeapon : MonoBehaviour
             transform.position = new Vector2(player.transform.position.x + 1.1f, player.transform.position.y + 0.05f);
             if (Input.GetKey(spearKey))
             {
-                GetComponent<Rigidbody2D>().gravityScale = 1;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                 gameObject.GetComponent<Renderer>().enabled = true;
                 spearHead.GetComponent<Renderer>().enabled = true;
-                GetComponent<Rigidbody2D>().AddForce(Vector2.right * 10, ForceMode2D.Impulse);
+                gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 10, ForceMode2D.Impulse);
                 StartCoroutine(SpearCountdownRoutine());
                 Debug.Log("Spear Weapon Initiated");
 
