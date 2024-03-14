@@ -1953,6 +1953,7 @@ MonoBehaviour:
   Player: {fileID: 1952243508}
   grapplerStick: 0
   grapplerEnabled: 0
+  grappleExitForce: 0.06
 --- !u!50 &1028803743
 Rigidbody2D:
   serializedVersion: 4
@@ -2834,6 +2835,8 @@ MonoBehaviour:
   grapplerActive: 0
   Player: {fileID: 1952243508}
   PlayerController: {fileID: 1952243511}
+  Grappler: {fileID: 1028803741}
+  GrappleHook: {fileID: 1028803742}
 --- !u!4 &1672305537
 Transform:
   m_ObjectHideFlags: 0

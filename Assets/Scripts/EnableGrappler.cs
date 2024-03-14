@@ -21,9 +21,9 @@ public class EnableGrappler : MonoBehaviour
     {
         if (GrappleHook.grapplerEnabled)
         {
-            GrappleHook.grapplerEnabled = false;
-            InventoryItemData.grapplerActive = 1;
-            Destroy(gameObject);
+       //     GrappleHook.grapplerEnabled = false;
+        //    InventoryItemData.grapplerActive = 1;
+          //  Destroy(gameObject);
         }
     }
 }
