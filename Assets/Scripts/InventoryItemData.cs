@@ -22,7 +22,6 @@ public class InventoryItemData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        grapplerActive = 2;
     }
 
     // Update is called once per frame
