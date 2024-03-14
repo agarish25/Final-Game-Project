@@ -20,6 +20,7 @@ public class GrappleHook : MonoBehaviour
     Vector2 frozenPos;
     public bool grapplerStick;
     public bool grapplerEnabled;
+    public float grappleExitForce;
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +65,8 @@ public class GrappleHook : MonoBehaviour
                 transform.position = new Vector2(0, -100);
                 gameObject.GetComponent<Renderer>().enabled = false;
                 grapplerStick = false;
+                Debug.Log(grappleExitForce * (Player.transform.position.y - transform.position.y));
+                Player.GetComponent<Rigidbody2D>().AddForce(Vector2.up * grappleExitForce * (Player.transform.position.y - transform.position.y), ForceMode2D.Impulse);
             }
         }
         if (GetComponent<Rigidbody2D>().velocity.y < 0 && !frozen)

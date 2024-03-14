@@ -13,14 +13,15 @@ public class InventoryItemData : MonoBehaviour
     public int chargeJumpActive;
     [SerializeField]
     public int grapplerActive;
-
+    
     public GameObject Player;
     public PlayerController PlayerController;
+    public GameObject Grappler;
+    public GrappleHook GrappleHook;
 
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -37,6 +38,7 @@ public class InventoryItemData : MonoBehaviour
         }
         if (grapplerActive == 2) {
             PlayerController.grapplerActive = true;
+            GrappleHook.grapplerEnabled = true;
         }
     }
 }
