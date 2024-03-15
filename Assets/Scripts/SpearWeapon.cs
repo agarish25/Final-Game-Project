@@ -16,6 +16,7 @@ public class SpearWeapon : MonoBehaviour
     bool hasSpear = false;
     bool goUp = false;
     bool floating = true;
+    bool spearFiring;
     float translated;
 
 
@@ -29,22 +30,27 @@ public class SpearWeapon : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (floating) {
-            if (gameObject.transform.position.y >= -2.50) {
+        if (floating)
+        {
+            if (gameObject.transform.position.y >= -2.50)
+            {
                 goUp = false;
             }
-            else if (gameObject.transform.position.y <= -3.0f) {
-            goUp = true;
+            else if (gameObject.transform.position.y <= -3.0f)
+            {
+                goUp = true;
             }
-            if (goUp) {
-            transform.position = new Vector2(transform.position.x, transform.position.y + 0.015f);
+            if (goUp)
+            {
+                transform.position = new Vector2(transform.position.x, transform.position.y + 0.015f);
             }
-            else if (!goUp) {
-            transform.position = new Vector2(transform.position.x, transform.position.y - 0.015f);
+            else if (!goUp)
+            {
+                transform.position = new Vector2(transform.position.x, transform.position.y - 0.015f);
             }
         }
-        
-        
+
+
 
 
 
@@ -53,22 +59,30 @@ public class SpearWeapon : MonoBehaviour
             if (Input.GetKey(spearKey))
             {
                 Debug.Log("Spear Fired");
+                spearFiring = true;
+                transform.position = new Vector2(player.transform.position.x + 1.1f, player.transform.position.y + 0.05f);
                 gameObject.GetComponent<Renderer>().enabled = true;
                 spearHead.GetComponent<Renderer>().enabled = true;
-                transform.position = new Vector2(player.transform.position.x + 1.1f, player.transform.position.y + 0.05f);
                 translated = 0;
-                while (translated < 1000)
+            }
+            if (spearFiring)
+            {
+                if (translated < 10000)
                 {
-
-                    transform.position = new Vector2(player.transform.position.x + 1.1f + translated * 10, player.transform.position.y + 0.05f);
+                    Debug.Log(transform.position);
+                    translated++;
+                    transform.position = new Vector2(transform.position.x + 0.001f, transform.position.y);
                 }
-                transform.position = new Vector2(0, -1000);
-                StartCoroutine(SpearCountdownRoutine());
-                Debug.Log("Spear Weapon Initiated");
+                else
+                {
+                    spearFiring = false;
+                    transform.position = new Vector2(0, -1000);
+                    StartCoroutine(SpearCountdownRoutine());
+                    Debug.Log("Spear Weapon Initiated");
+                }
             }
         }
     }
-
     IEnumerator SpearCountdownRoutine() {
         yield return new WaitForSeconds(5);
         gameObject.GetComponent<Renderer>().enabled = false;
