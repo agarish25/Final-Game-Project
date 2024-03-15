@@ -54,8 +54,9 @@ public class SpearWeapon : MonoBehaviour
             {
                 gameObject.GetComponent<Renderer>().enabled = true;
                 spearHead.GetComponent<Renderer>().enabled = true;
-                transform.Translate(Vector2.left * Time.deltaTime * 20);
-                transform.Translate(Vector2.right * Time.deltaTime * 40);
+                transform.position = new Vector2(player.transform.position.x + 1.1f, player.transform.position.y + 0.05f);
+                StartCoroutine(SpearMovementCountdownRoutine());
+                
                 StartCoroutine(SpearCountdownRoutine());
                 Debug.Log("Spear Weapon Initiated");
 
@@ -64,9 +65,14 @@ public class SpearWeapon : MonoBehaviour
     }
 
     IEnumerator SpearCountdownRoutine() {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5);
         gameObject.GetComponent<Renderer>().enabled = false;
         spearHead.GetComponent<Renderer>().enabled = false;
+    }
+
+    IEnumerator SpearMovementCountdownRoutine() {
+        yield return new WaitForSeconds(0.4f);
+        transform.Translate(Vector2.right * Time.deltaTime * 30);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
