@@ -18,6 +18,7 @@ public class SpearWeapon : MonoBehaviour
     bool floating = true;
     bool spearFiring;
     float translated;
+    float translatedDistance;
 
 
 
@@ -56,7 +57,7 @@ public class SpearWeapon : MonoBehaviour
 
         if (hasSpear)
         {
-            if (Input.GetKey(spearKey))
+            if (Input.GetKey(spearKey) && !spearFiring)
             {
                 Debug.Log("Spear Fired");
                 spearFiring = true;
@@ -67,18 +68,15 @@ public class SpearWeapon : MonoBehaviour
             }
             if (spearFiring)
             {
-                if (translated < 10000)
+                if (translated < 30)
                 {
-                    Debug.Log(transform.position);
                     translated++;
-                    transform.position = new Vector2(transform.position.x + 0.001f, transform.position.y);
+                    translatedDistance += 0.05f;
+                    transform.position = new Vector2(player.transform.position.x + 1.1f + translatedDistance, player.transform.position.y + 0.05f);
                 }
                 else
                 {
-                    spearFiring = false;
-                    transform.position = new Vector2(0, -1000);
-                    StartCoroutine(SpearCountdownRoutine());
-                    Debug.Log("Spear Weapon Initiated");
+                    transform.position = new Vector2(transform.position.x - 0.05f, player.transform.position.y + 0.05f);
                 }
             }
         }
@@ -93,12 +91,16 @@ public class SpearWeapon : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            translated = 0;
+            translatedDistance = 0;
+            spearFiring = false;
             hasSpear = true;
             transform.position = new Vector2(0, -1000);
             gameObject.GetComponent<Renderer>().enabled = false;
             spearHead.GetComponent<Renderer>().enabled = false;
             transform.eulerAngles = new Vector2(0, 0);
             floating = false;
+            StartCoroutine(SpearCountdownRoutine());
         }
     }
 }
