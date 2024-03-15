@@ -36,16 +36,16 @@ public class InventoryItemData : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (doubleJumpActive == 2) {
+        if (doubleJumpActive == 1) {
             PlayerController.doubleJumpActive = true;
         }
-        if (dashActive == 2) {
+        if (dashActive == 1) {
             PlayerController.dashActive = true;
         }
-        if (chargeJumpActive == 2) {
+        if (chargeJumpActive == 1) {
             PlayerController.chargeJumpActive = true;
         }
-        if (grapplerActive == 2) {
+        if (grapplerActive == 1) {
             PlayerController.grapplerActive = true;
             GrappleHook.grapplerEnabled = true;
         }
