@@ -14,6 +14,10 @@ public class GrappleHook : MonoBehaviour
     GameObject player;
     [SerializeField]
     float grappleForce;
+    [SerializeField]
+    KeyCode a;
+    [SerializeField]
+    KeyCode d;
     public bool grappleActive;
     public GameObject Player;
     bool frozen;
@@ -21,11 +25,13 @@ public class GrappleHook : MonoBehaviour
     public bool grapplerStick;
     public bool grapplerEnabled;
     public float grappleExitForce;
+    float grapplerOffset;
 
     // Start is called before the first frame update
     void Start()
     {
         transform.position = new Vector2(0, -100);
+        grapplerOffset = 0;
         grapplerStick = false;
         grappleActive = false;
         frozen = false;
@@ -38,13 +44,21 @@ public class GrappleHook : MonoBehaviour
     {
         if (!grapplerStick)
         {
-            transform.position = new Vector2(Player.transform.position.x, transform.position.y);
+            if (Input.GetKey(a)) {
+                grapplerOffset -= 0.003f;
+            }
+            if (Input.GetKey(d)) {
+                grapplerOffset += 0.003f;
+            }
+            transform.position = new Vector2(Player.transform.position.x + grapplerOffset, transform.position.y);
         }
         if (transform.position.y - 0.5 < Player.transform.position.y && grapplerStick)
         {
             grappleActive = false;
             grapplerStick = false;
             gameObject.GetComponent<Renderer>().enabled = false;
+            transform.position = new Vector2(0, -100);
+            grapplerOffset = 0;
         }
         if (frozen)
             transform.position = frozenPos;
@@ -62,11 +76,11 @@ public class GrappleHook : MonoBehaviour
             }
             else
             {
+                Player.GetComponent<Rigidbody2D>().AddForce(Vector2.up * grappleExitForce * (transform.position.y - Player.transform.position.y), ForceMode2D.Impulse);
                 transform.position = new Vector2(0, -100);
+                grapplerOffset = 0;
                 gameObject.GetComponent<Renderer>().enabled = false;
                 grapplerStick = false;
-                Debug.Log(grappleExitForce * (Player.transform.position.y - transform.position.y));
-                Player.GetComponent<Rigidbody2D>().AddForce(Vector2.up * grappleExitForce * (Player.transform.position.y - transform.position.y), ForceMode2D.Impulse);
             }
         }
         if (GetComponent<Rigidbody2D>().velocity.y < 0 && !frozen)
@@ -74,6 +88,8 @@ public class GrappleHook : MonoBehaviour
             gameObject.GetComponent<Renderer>().enabled = false;
             grappleActive = false;
             grapplerStick = false;
+            transform.position = new Vector2(0, -100);
+            grapplerOffset = 0;
         }
     }
 
@@ -96,6 +112,8 @@ public class GrappleHook : MonoBehaviour
             gameObject.GetComponent<Renderer>().enabled = false;
             grappleActive = false;
             grapplerStick = false;
+            transform.position = new Vector2(0, -100);
+            grapplerOffset = 0; 
         }
     }
 }

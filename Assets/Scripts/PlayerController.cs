@@ -135,11 +135,11 @@ public class PlayerController : MonoBehaviour
             }
             if (grapplerStick && Input.GetKey(up))
             {
-                transform.position = new Vector2(transform.position.x, transform.position.y + 0.01f);
+                transform.position = new Vector2(transform.position.x, transform.position.y + 0.005f);
             }
             if (grapplerStick && Input.GetKey(down))
             {
-                transform.position = new Vector2(transform.position.x, transform.position.y - 0.01f);
+                transform.position = new Vector2(transform.position.x, transform.position.y - 0.005f);
             }
             if (dashActive)
             {

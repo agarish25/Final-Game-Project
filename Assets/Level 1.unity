@@ -1953,7 +1953,7 @@ MonoBehaviour:
   Player: {fileID: 1952243508}
   grapplerStick: 0
   grapplerEnabled: 0
-  grappleExitForce: 0.06
+  grappleExitForce: 1.1
 --- !u!50 &1028803743
 Rigidbody2D:
   serializedVersion: 4
