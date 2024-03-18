@@ -2230,7 +2230,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &664724034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3732,6 +3732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 69204615}
+  overallBar: {fileID: 664724033}
   healthAmount: 100
 --- !u!4 &1323090421
 Transform:

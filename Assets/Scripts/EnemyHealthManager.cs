@@ -9,6 +9,9 @@ public class EnemyHealthManager : MonoBehaviour
     Image healthBar;
 
     [SerializeField]
+    GameObject overallBar;
+
+    [SerializeField]
     float healthAmount = 100f;
     // Start is called before the first frame update
     void Start()
@@ -16,13 +19,12 @@ public class EnemyHealthManager : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    private void Update()
     {
-        if (healthAmount <= 0) {
-            healthBar.Destroyed();
+        if (healthAmount <= 0)
+        {
+            Destroy(overallBar);
         }
-
         if (Input.GetKeyDown(KeyCode.H)) {
             TakeDamage(25);
         }
