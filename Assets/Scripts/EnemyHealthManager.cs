@@ -20,11 +20,11 @@ public class EnemyHealthManager : MonoBehaviour
     void FixedUpdate()
     {
         if (healthAmount <= 0) {
-            healthBar.Destroy();
+            healthBar.GetComponent<Renderer>().enabled = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            TakeDamage(70);
+        if (Input.GetKeyDown(KeyCode.H)) {
+            TakeDamage(25);
         }
     }
 
