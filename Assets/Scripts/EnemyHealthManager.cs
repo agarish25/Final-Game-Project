@@ -20,7 +20,7 @@ public class EnemyHealthManager : MonoBehaviour
     void FixedUpdate()
     {
         if (healthAmount <= 0) {
-            healthBar.GetComponent<Renderer>().enabled = false;
+            healthBar.Destroyed();
         }
 
         if (Input.GetKeyDown(KeyCode.H)) {
