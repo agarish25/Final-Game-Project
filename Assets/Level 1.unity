@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 48424728}
   - component: {fileID: 48424727}
   m_Layer: 0
-  m_Name: Inventory Slot 1 (18)
+  m_Name: GrapplerButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 180, y: -79.99998}
+  m_AnchoredPosition: {x: -180, y: -80}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &48424727
@@ -205,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 48424728}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1672305536}
+        m_TargetAssemblyTypeName: InventoryItemData, Assembly-CSharp
+        m_MethodName: gClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &48424728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,7 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.88379604, b: 0.9811321, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -587,7 +599,7 @@ GameObject:
   - component: {fileID: 89263317}
   - component: {fileID: 89263316}
   m_Layer: 0
-  m_Name: Inventory Slot 1 (19)
+  m_Name: ChargeJumpButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -610,7 +622,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59.999992, y: -79.99998}
+  m_AnchoredPosition: {x: 60, y: 80.00001}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &89263316
@@ -656,7 +668,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 89263317}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1672305536}
+        m_TargetAssemblyTypeName: InventoryItemData, Assembly-CSharp
+        m_MethodName: cjClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &89263317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -670,7 +694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.990566, g: 0.0046724924, b: 0.0046724924, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2795,7 +2819,7 @@ GameObject:
   - component: {fileID: 892589325}
   - component: {fileID: 892589324}
   m_Layer: 0
-  m_Name: Inventory Slot 1 (20)
+  m_Name: DashButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2818,7 +2842,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -60.000008, y: -79.99998}
+  m_AnchoredPosition: {x: -180, y: 80.00001}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &892589324
@@ -2864,7 +2888,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 892589325}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1672305536}
+        m_TargetAssemblyTypeName: InventoryItemData, Assembly-CSharp
+        m_MethodName: dClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &892589325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2878,7 +2914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9215501, b: 0.3820755, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4033,6 +4069,8 @@ MonoBehaviour:
   PlayerController: {fileID: 1952243511}
   Grappler: {fileID: 1028803741}
   GrappleHook: {fileID: 1028803742}
+  inventoryData: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  equippedData: 00000000000000000000000000000000
 --- !u!4 &1672305537
 Transform:
   m_ObjectHideFlags: 0
@@ -4207,7 +4245,7 @@ GameObject:
   - component: {fileID: 1710659088}
   - component: {fileID: 1710659087}
   m_Layer: 0
-  m_Name: Inventory Slot 1 (8)
+  m_Name: DoubleJumpButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4230,7 +4268,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -180, y: -79.99998}
+  m_AnchoredPosition: {x: -300, y: 80.00001}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1710659087
@@ -4276,7 +4314,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1710659088}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1672305536}
+        m_TargetAssemblyTypeName: InventoryItemData, Assembly-CSharp
+        m_MethodName: djClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1710659088
 MonoBehaviour:
   m_ObjectHideFlags: 0
