@@ -11,6 +11,9 @@ public class EnemyHealthManager : MonoBehaviour
     [SerializeField]
     GameObject overallBar;
 
+    public GameObject enemyController;
+    public EnemyController EnemyController;
+
     [SerializeField]
     float healthAmount = 100f;
     // Start is called before the first frame update
@@ -25,13 +28,6 @@ public class EnemyHealthManager : MonoBehaviour
         {
             Destroy(overallBar);
         }
-        if (Input.GetKeyDown(KeyCode.H)) {
-            TakeDamage(25);
-        }
-    }
-
-    public void TakeDamage(float damage) {
-        healthAmount -= damage;
-        healthBar.fillAmount = healthAmount / 100;
+        healthBar.fillAmount = EnemyController.health / 100.0f; 
     }
 }

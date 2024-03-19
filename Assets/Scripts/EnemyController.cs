@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    private int health;
+    public int health;
+    public bool damageTaken;
     // Start is called before the first frame update
     void Start()
     {
         health = 100;
+        damageTaken = false;
     }
 
     // Update is called once per frame
@@ -24,7 +26,9 @@ public class EnemyController : MonoBehaviour
     {
         if ((collision.gameObject.CompareTag("Spear")) && (collision.gameObject.GetComponent<Renderer>().enabled == true))
         {
-            health -= 70;
+            health -= 25;
+            damageTaken = true;
         }
+        damageTaken = false;
     }
 }
