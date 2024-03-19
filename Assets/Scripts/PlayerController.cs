@@ -229,12 +229,12 @@ public class PlayerController : MonoBehaviour
                 }
                 else if (grapplerStick)
                 {
-                    if (transform.position.x > GrappleHook.transform.position.x + 0.02)
+                    if (transform.position.x > GrappleHook.transform.position.x + 0.04)
                     {
                         transform.Translate(Vector2.left * grapplerSpeed * Mathf.Abs((GrappleHook.transform.position.y - transform.position.y) - Mathf.Abs(GrappleHook.transform.position.x - transform.position.x)) * 0.3f);
                         transform.Translate(Vector2.down * grapplerVert * (GrappleHook.transform.position.y - transform.position.y) * 0.03f);
                     }
-                    else if (transform.position.x < GrappleHook.transform.position.x - 0.02)
+                    else if (transform.position.x < GrappleHook.transform.position.x - 0.04)
                     {
                         transform.Translate(Vector2.right * grapplerSpeed * Mathf.Abs((GrappleHook.transform.position.y - transform.position.y) - Mathf.Abs(GrappleHook.transform.position.x - transform.position.x)) * 0.3f);
                         transform.Translate(Vector2.down * grapplerVert * (GrappleHook.transform.position.y - transform.position.y) * 0.03f);
