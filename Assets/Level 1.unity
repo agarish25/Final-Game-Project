@@ -404,7 +404,7 @@ RectTransform:
   m_GameObject: {fileID: 69204613}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.00341893, y: 0.00341893, z: 0.00341893}
+  m_LocalScale: {x: 0.0032678477, y: 0.0016339239, z: 0.0032678477}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 664724037}
@@ -412,7 +412,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 32.390003, y: -95.94}
+  m_AnchoredPosition: {x: 32.374004, y: -96.14106}
   m_SizeDelta: {x: 325, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &69204615
@@ -746,7 +746,7 @@ RectTransform:
   m_GameObject: {fileID: 104586906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.00341893, y: 0.00341893, z: 0.00341893}
+  m_LocalScale: {x: 0.0032678477, y: 0.0016339239, z: 0.0032678477}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 664724037}
@@ -754,7 +754,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 32.390003, y: -95.94}
+  m_AnchoredPosition: {x: 32.374004, y: -96.14106}
   m_SizeDelta: {x: 325, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &104586908
@@ -2636,7 +2636,7 @@ RectTransform:
   m_GameObject: {fileID: 775963895}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.00341893, y: 0.00341893, z: 0.00341893}
+  m_LocalScale: {x: 0.0026959742, y: 0.0013684111, z: 0.0032678477}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 664724037}
@@ -2644,7 +2644,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 32.39, y: -95.94}
+  m_AnchoredPosition: {x: 32.374, y: -96.14106}
   m_SizeDelta: {x: 350, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &775963897
@@ -3769,7 +3769,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 69204615}
   overallBar: {fileID: 664724033}
-  enemyController: {fileID: 1691095514}
   EnemyController: {fileID: 1691095515}
   healthAmount: 100
 --- !u!4 &1323090421
