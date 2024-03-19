@@ -11,7 +11,6 @@ public class EnemyHealthManager : MonoBehaviour
     [SerializeField]
     GameObject overallBar;
 
-    //public GameObject enemyController;
     public EnemyController EnemyController;
 
     [SerializeField]
