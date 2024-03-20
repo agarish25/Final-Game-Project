@@ -2891,7 +2891,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1672305536}
         m_TargetAssemblyTypeName: InventoryItemData, Assembly-CSharp
-        m_MethodName: sClicked
+        m_MethodName: dClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

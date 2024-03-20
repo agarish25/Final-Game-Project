@@ -213,6 +213,9 @@ public class InventoryItemData : MonoBehaviour
                         spearButton.gameObject.transform.localPosition = new Vector2(-180 + 120 * j, -80);
                         j = 4;
                     }
+                    else if (j == 3) {
+                         sChange = 0;
+                    }
                 }
             }
             if (sChange == 1) {
