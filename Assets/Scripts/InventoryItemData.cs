@@ -14,20 +14,25 @@ public class InventoryItemData : MonoBehaviour
     public int chargeJumpActive;
     [SerializeField]
     public int grapplerActive;
-    
+    [SerializeField]
+    public int spearActive;
+
     int djChange = 0;
     int dChange = 0;
     int cjChange = 0;
     int gChange = 0;
+    int sChange = 0;
 
     public Button djButton;
     public Button dashButton;
     public Button cjButton;
     public Button grapplerButton;
+    public Button spearButton;
     public GameObject Player;
     public PlayerController PlayerController;
     public GameObject Grappler;
     public GrappleHook GrappleHook;
+    public SpearWeapon SpearWeapon;
 
     public int[] inventoryData = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     public int[] equippedData = {0, 0, 0, 0};
@@ -39,6 +44,7 @@ public class InventoryItemData : MonoBehaviour
         dashButton.gameObject.SetActive(false);
         cjButton.gameObject.SetActive(false);
         grapplerButton.gameObject.SetActive(false);
+        spearButton.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -189,6 +195,42 @@ public class InventoryItemData : MonoBehaviour
             }
             gChange = grapplerActive;
         }
+        if (sChange != spearActive) {
+            spearButton.gameObject.SetActive(true);
+            if (spearActive == 1) {
+                for (int i = 0; i < 12; i++) {
+                    if (inventoryData[i] == 0) {
+                        spearButton.gameObject.transform.localPosition = new Vector2(-300 + 120 * i, 80);
+                        inventoryData[i] = 5;
+                        i = 12;
+                    }
+                }
+            }
+            else if (spearActive == 2) {
+                for (int j = 0; j < 4; j++) {
+                    if (equippedData[j] == 0) {
+                        equippedData[j] = 5;
+                        spearButton.gameObject.transform.localPosition = new Vector2(-180 + 120 * j, -80);
+                        j = 4;
+                    }
+                }
+            }
+            if (sChange == 1) {
+                for (int i = 0; i < 12; i++) {
+                    if (inventoryData[i] == 5) {
+                        inventoryData[i] = 0;
+                    }
+                }
+            }
+            else if (sChange == 2) {
+                for (int i = 0; i < 4; i++) {
+                    if (equippedData[i] == 5) {
+                        equippedData[i] = 0;
+                    }
+                }
+            }
+            sChange = spearActive;
+        }
         if (doubleJumpActive == 2) {
             PlayerController.doubleJumpActive = true;
         }
@@ -214,6 +256,12 @@ public class InventoryItemData : MonoBehaviour
         else {
             PlayerController.grapplerActive = false;
             GrappleHook.grapplerEnabled = false;
+        }
+        if (spearActive == 2) {
+            SpearWeapon.spearEnabled = true;
+        }
+        else {
+            SpearWeapon.spearEnabled = false;
         }
     }
 
@@ -250,6 +298,15 @@ public class InventoryItemData : MonoBehaviour
         }
         else {
             grapplerActive = 1;
+        }
+    }
+    
+    public void sClicked() {
+        if (spearActive == 1) {
+            spearActive = 2;
+        }
+        else {
+            spearActive = 1;
         }
     }
 }

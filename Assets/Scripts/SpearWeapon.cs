@@ -13,7 +13,10 @@ public class SpearWeapon : MonoBehaviour
     [SerializeField]
     KeyCode spearKey;
 
+    public InventoryItemData InventoryItemData;
+
     bool hasSpear = false;
+    public bool spearEnabled;
     bool goUp = false;
     bool floating = true;
     bool spearFiring;
@@ -56,7 +59,7 @@ public class SpearWeapon : MonoBehaviour
 
 
 
-        if (hasSpear)
+        if (spearEnabled)
         {
             if (spearJustEnd)
             {
@@ -100,7 +103,10 @@ public class SpearWeapon : MonoBehaviour
             translated = 0;
             translatedDistance = 0;
             spearFiring = false;
-            hasSpear = true;
+            if (!hasSpear) {
+                hasSpear = true;
+                InventoryItemData.spearActive = 1;
+            }
             transform.position = new Vector2(0, -1000);
             gameObject.GetComponent<Renderer>().enabled = false;
             spearHead.GetComponent<Renderer>().enabled = false;
