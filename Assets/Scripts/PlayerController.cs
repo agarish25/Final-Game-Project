@@ -41,14 +41,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     public bool grapplerActive;
 
+    [SerializeField]
+    public PlayerHealthManager PlayerHealthManager;
+
     public GameObject grappler;
     public GrappleHook GrappleHook;
     bool grapplerStick;
 
-    float xSpawn;
-    float ySpawn;
+    public float xSpawn;
+    public float ySpawn;
     public bool direction;
-    int deaths;
+    public int deaths;
 
     public float timeHeld;
     public float grapplerSpeed;
@@ -100,7 +103,7 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        if (transform.position.y < -20)
+        if (transform.position.y < -30)
         {
             transform.position = new Vector2(xSpawn, ySpawn);
             deaths++;
@@ -274,6 +277,10 @@ public class PlayerController : MonoBehaviour
         {
             isOnGround = false;
         }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            PlayerHealthManager.healthAmount -= 10;
+        }
         // if (collision.gameObject.CompareTag("Killzone"))
         // {
         //     transform.position = new Vector2(xSpawn, ySpawn);
@@ -340,6 +347,10 @@ public class PlayerController : MonoBehaviour
         {
             isOnGround = true;
             doubleJump = false;
+        }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            PlayerHealthManager.healthAmount -= 0.2f;
         }
         // if (collision.gameObject.CompareTag("Checkpoint"))
         // {
