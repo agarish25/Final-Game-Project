@@ -107,6 +107,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector2(xSpawn, ySpawn);
             deaths++;
+            PlayerHealthManager.healthAmount = 100;
         }
         if (isDashing == 0)
         {
