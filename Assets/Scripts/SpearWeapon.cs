@@ -14,6 +14,7 @@ public class SpearWeapon : MonoBehaviour
     KeyCode spearKey;
 
     public InventoryItemData InventoryItemData;
+    public PlayerController PlayerController;
 
     bool hasSpear = false;
     public bool spearEnabled;
