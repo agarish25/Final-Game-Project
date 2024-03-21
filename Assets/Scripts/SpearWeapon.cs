@@ -13,7 +13,11 @@ public class SpearWeapon : MonoBehaviour
     [SerializeField]
     KeyCode spearKey;
 
+    [SerializeField]
+    KeyCode oppositeSpearKey;
+
     public InventoryItemData InventoryItemData;
+    public PlayerController PlayerController;
 
     bool hasSpear = false;
     public bool spearEnabled;
@@ -75,6 +79,19 @@ public class SpearWeapon : MonoBehaviour
                 spearHead.GetComponent<Renderer>().enabled = true;
                 translated = 0;
             }
+
+            /*if (Input.GetKey(oppositeSpearKey) && !spearFiring)
+            {
+                Debug.Log("Spear Fired");
+                spearFiring = true;
+                transform.position = new Vector2(player.transform.position.x - 1.1f, player.transform.position.y + 0.57f);
+                transform.eulerAngles = new Vector2(90, 0);
+                gameObject.GetComponent<Renderer>().enabled = true;
+                spearHead.GetComponent<Renderer>().enabled = true;
+                translated = 0;
+            }*/
+
+
             if (spearFiring)
             {
                 if (translated < 15)

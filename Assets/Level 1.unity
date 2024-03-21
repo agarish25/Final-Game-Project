@@ -6673,5 +6673,7 @@ MonoBehaviour:
   player: {fileID: 1952243508}
   spearHead: {fileID: 1081338424}
   spearKey: 103
+  oppositeSpearKey: 99
   InventoryItemData: {fileID: 1672305536}
+  PlayerController: {fileID: 0}
   spearEnabled: 0
