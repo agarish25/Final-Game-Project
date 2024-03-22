@@ -80,7 +80,7 @@ public class SpearWeapon : MonoBehaviour
                 translated = 0;
             }
 
-            /*if (Input.GetKey(oppositeSpearKey) && !spearFiring)
+            else if (Input.GetKey(oppositeSpearKey) && !spearFiring)
             {
                 Debug.Log("Spear Fired");
                 spearFiring = true;
@@ -89,7 +89,7 @@ public class SpearWeapon : MonoBehaviour
                 gameObject.GetComponent<Renderer>().enabled = true;
                 spearHead.GetComponent<Renderer>().enabled = true;
                 translated = 0;
-            }*/
+            }
 
 
             if (spearFiring)

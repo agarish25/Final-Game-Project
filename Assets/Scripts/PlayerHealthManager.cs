@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class PlayerHealthManager : MonoBehaviour
 {
     [SerializeField]
-    Image healthBar;
+    public Image healthBar;
 
     [SerializeField]
-    GameObject overallBar;
+    public GameObject overallBar;
 
     [SerializeField]
     GameObject Player;
