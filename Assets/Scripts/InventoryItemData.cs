@@ -36,6 +36,7 @@ public class InventoryItemData : MonoBehaviour
 
     public int[] inventoryData = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     public int[] equippedData = {0, 0, 0, 0};
+    public int[] passiveData = { 0, 0 };
 
     // Start is called before the first frame update
     void Start()
@@ -62,11 +63,11 @@ public class InventoryItemData : MonoBehaviour
                 }
             }
             else if (doubleJumpActive == 2) {
-                for (int j = 0; j < 4; j++) {
-                    if (equippedData[j] == 0) {
+                for (int j = 0; j < 2; j++) {
+                    if (passiveData[j] == 0) {
                         equippedData[j] = 1;
-                        djButton.gameObject.transform.localPosition = new Vector2(-180 + 120 * j, -80);
-                        j = 4;
+                        djButton.gameObject.transform.localPosition = new Vector2(-300 * -(((j + 1) % 2) - 1), -80);
+                        j = 2;
                     }
                 }
             }
@@ -78,9 +79,9 @@ public class InventoryItemData : MonoBehaviour
                 }
             }
             else if (djChange == 2) {
-                for (int i = 0; i < 4; i++) {
-                    if (equippedData[i] == 1) {
-                        equippedData[i] = 0;
+                for (int i = 0; i < 2; i++) {
+                    if (passiveData[i] == 1) {
+                        passiveData[i] = 0;
                     }
                 }
             }
@@ -134,11 +135,11 @@ public class InventoryItemData : MonoBehaviour
                 }
             }
             else if (chargeJumpActive == 2) {
-                for (int j = 0; j < 4; j++) {
-                    if (equippedData[j] == 0) {
-                        equippedData[j] = 3;
-                        cjButton.gameObject.transform.localPosition = new Vector2(-180 + 120 * j, -80);
-                        j = 4;
+                for (int j = 0; j < 2; j++) {
+                    if (passiveData[j] == 0) {
+                        passiveData[j] = 3;
+                        cjButton.gameObject.transform.localPosition = new Vector2(-300 * -(((j + 1) % 2) * 2 - 1), -80);
+                        j = 2;
                     }
                 }
             }
@@ -150,9 +151,9 @@ public class InventoryItemData : MonoBehaviour
                 }
             }
             else if (cjChange == 2) {
-                for (int i = 0; i < 4; i++) {
-                    if (equippedData[i] == 3) {
-                        equippedData[i] = 0;
+                for (int i = 0; i < 2; i++) {
+                    if (passiveData[i] == 3) {
+                        passiveData[i] = 0;
                     }
                 }
             }
@@ -178,7 +179,6 @@ public class InventoryItemData : MonoBehaviour
                     }
                 }
             }
-            Debug.Log(inventoryData);
             if (gChange == 1) {
                 for (int i = 0; i < 12; i++) {
                     if (inventoryData[i] == 4) {
