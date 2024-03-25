@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviour
     public bool chargeJumpActive;
     [SerializeField]
     public bool grapplerActive;
+    [SerializeField]
+    public bool healthGemActive;
 
     [SerializeField]
     public PlayerHealthManager PlayerHealthManager;
@@ -171,6 +173,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (healthGemActive && PlayerHealthManager.healthAmount < 100)
+        {
+            PlayerHealthManager.healthAmount += 0.01f;
+        }
         if (dashActive)
         {
             dashCool++;

@@ -16,18 +16,22 @@ public class InventoryItemData : MonoBehaviour
     public int grapplerActive;
     [SerializeField]
     public int spearActive;
+    [SerializeField]
+    public int healthGemActive;
 
     int djChange = 0;
     int dChange = 0;
     int cjChange = 0;
     int gChange = 0;
     int sChange = 0;
+    int hgChange = 0;
 
     public Button djButton;
     public Button dashButton;
     public Button cjButton;
     public Button grapplerButton;
     public Button spearButton;
+    public Button hgButton;
     public GameObject Player;
     public PlayerController PlayerController;
     public GameObject Grappler;
@@ -46,6 +50,7 @@ public class InventoryItemData : MonoBehaviour
         cjButton.gameObject.SetActive(false);
         grapplerButton.gameObject.SetActive(false);
         spearButton.gameObject.SetActive(false);
+        hgButton.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -234,6 +239,55 @@ public class InventoryItemData : MonoBehaviour
             }
             sChange = spearActive;
         }
+        if (hgChange != healthGemActive)
+        {
+            hgButton.gameObject.SetActive(true);
+            if (healthGemActive == 1)
+            {
+                for (int i = 0; i < 12; i++)
+                {
+                    if (inventoryData[i] == 0)
+                    {
+                        inventoryData[i] = 6;
+                        hgButton.gameObject.transform.localPosition = new Vector2(-300 + 120 * i, 80);
+                        i = 12;
+                    }
+                }
+            }
+            else if (healthGemActive == 2)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    if (passiveData[j] == 0)
+                    {
+                        passiveData[j] = 6;
+                        hgButton.gameObject.transform.localPosition = new Vector2(-300 * -(((j + 1) % 2) * 2 - 1), -80);
+                        j = 2;
+                    }
+                }
+            }
+            if (hgChange == 1)
+            {
+                for (int i = 0; i < 12; i++)
+                {
+                    if (inventoryData[i] == 6)
+                    {
+                        inventoryData[i] = 0;
+                    }
+                }
+            }
+            else if (hgChange == 2)
+            {
+                for (int i = 0; i < 2; i++)
+                {
+                    if (passiveData[i] == 6)
+                    {
+                        passiveData[i] = 0;
+                    }
+                }
+            }
+            hgChange = healthGemActive;
+        }
         if (doubleJumpActive == 2) {
             PlayerController.doubleJumpActive = true;
         }
@@ -265,6 +319,14 @@ public class InventoryItemData : MonoBehaviour
         }
         else {
             SpearWeapon.spearEnabled = false;
+        }
+        if (healthGemActive == 2)
+        {
+            PlayerController.healthGemActive = true;
+        }
+        else
+        {
+            PlayerController.healthGemActive = false;
         }
     }
 
@@ -310,6 +372,17 @@ public class InventoryItemData : MonoBehaviour
         }
         else {
             spearActive = 1;
+        }
+    }
+    public void hgClicked()
+    {
+        if (healthGemActive == 1)
+        {
+            healthGemActive = 2;
+        }
+        else
+        {
+            healthGemActive = 1;
         }
     }
 }
