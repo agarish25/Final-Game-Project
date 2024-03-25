@@ -18,6 +18,7 @@ public class SpearWeapon : MonoBehaviour
 
     public InventoryItemData InventoryItemData;
     public PlayerController PlayerController;
+    public bool spearForward = true;
 
     bool hasSpear = false;
     public bool spearEnabled;
@@ -72,6 +73,7 @@ public class SpearWeapon : MonoBehaviour
             }
             if (Input.GetKey(spearKey) && !spearFiring)
             {
+                spearForward = true;
                 Debug.Log("Spear Fired");
                 spearFiring = true;
                 transform.position = new Vector2(player.transform.position.x + 1.1f, player.transform.position.y + 0.57f);
@@ -82,7 +84,8 @@ public class SpearWeapon : MonoBehaviour
 
             else if (Input.GetKey(oppositeSpearKey) && !spearFiring)
             {
-                Debug.Log("Spear Fired");
+                spearForward = false;
+                Debug.Log("Opposite Spear Fired");
                 spearFiring = true;
                 transform.position = new Vector2(player.transform.position.x - 1.1f, player.transform.position.y + 0.57f);
                 transform.eulerAngles = new Vector2(90, 0);
@@ -92,7 +95,7 @@ public class SpearWeapon : MonoBehaviour
             }
 
 
-            if (spearFiring)
+            if (spearFiring && spearForward)
             {
                 if (translated < 15)
                 {
@@ -103,6 +106,20 @@ public class SpearWeapon : MonoBehaviour
                 else
                 {
                     transform.position = new Vector2(transform.position.x - 0.07f, player.transform.position.y + 0.05f);
+                }
+            }
+
+            else if (spearFiring && !spearForward)
+            {
+                if (translated < 15)
+                {
+                    translated++;
+                    translatedDistance -= 0.07f;
+                    transform.position = new Vector2(player.transform.position.x - 1.1f + translatedDistance, player.transform.position.y + 0.05f);
+                }
+                else
+                {
+                    transform.position = new Vector2(transform.position.x + 0.07f, player.transform.position.y + 0.05f);
                 }
             }
         }
