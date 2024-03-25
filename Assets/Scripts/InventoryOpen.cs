@@ -6,7 +6,9 @@ public class InventoryOpen : MonoBehaviour
 {
     public GameObject InventoryPanel;
     [SerializeField]
-    KeyCode i; 
+    KeyCode i;
+    [SerializeField]
+    Canvas canvas1;
     bool pause = false;
 
     public PlayerHealthManager PlayerHealthManager;
@@ -34,6 +36,7 @@ public class InventoryOpen : MonoBehaviour
         Time.timeScale = 0;
         pause = true;
         PlayerHealthManager.overallBar.SetActive(false);
+        canvas1.gameObject.SetActive(false);
     }
 
     public void Continue() {
@@ -41,5 +44,6 @@ public class InventoryOpen : MonoBehaviour
         Time.timeScale = 1;
         pause = false;
         PlayerHealthManager.overallBar.SetActive(true);
+        canvas1.gameObject.SetActive(true);
     }
 }
