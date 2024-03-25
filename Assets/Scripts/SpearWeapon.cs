@@ -131,5 +131,9 @@ public class SpearWeapon : MonoBehaviour
             floating = false;
             spearJustEnd = true;
         }
+        else
+        {
+            translated = 15;
+        }
     }
 }
