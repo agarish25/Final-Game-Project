@@ -4192,6 +4192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InventoryPanel: {fileID: 1587349284}
   i: 105
+  canvas1: {fileID: 1057386231}
   PlayerHealthManager: {fileID: 794932401}
 --- !u!4 &1148526039
 Transform:
