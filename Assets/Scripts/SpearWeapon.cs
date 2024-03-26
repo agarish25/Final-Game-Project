@@ -27,7 +27,9 @@ public class SpearWeapon : MonoBehaviour
     bool spearFiring;
     bool spearJustEnd = false;
     float translated;
-    float translatedDistance;
+    float translatedDistanceForward;
+    float translatedDistanceBackward;
+
 
 
 
@@ -82,12 +84,12 @@ public class SpearWeapon : MonoBehaviour
                 translated = 0;
             }
 
-            else if (Input.GetKey(oppositeSpearKey) && !spearFiring)
+            if (Input.GetKey(oppositeSpearKey) && !spearFiring)
             {
                 spearForward = false;
                 Debug.Log("Opposite Spear Fired");
                 spearFiring = true;
-                transform.position = new Vector2(player.transform.position.x - 1.1f, player.transform.position.y + 0.57f);
+                transform.position = new Vector2(player.transform.position.x - 10.1f, player.transform.position.y + 0.57f);
                 transform.eulerAngles = new Vector2(90, 0);
                 gameObject.GetComponent<Renderer>().enabled = true;
                 spearHead.GetComponent<Renderer>().enabled = true;
@@ -100,8 +102,8 @@ public class SpearWeapon : MonoBehaviour
                 if (translated < 15)
                 {
                     translated++;
-                    translatedDistance += 0.07f;
-                    transform.position = new Vector2(player.transform.position.x + 1.1f + translatedDistance, player.transform.position.y + 0.05f);
+                    translatedDistanceForward += 0.07f;
+                    transform.position = new Vector2(player.transform.position.x + 1.1f + translatedDistanceForward, player.transform.position.y + 0.05f);
                 }
                 else
                 {
@@ -109,13 +111,13 @@ public class SpearWeapon : MonoBehaviour
                 }
             }
 
-            else if (spearFiring && !spearForward)
+            if (spearFiring && !spearForward)
             {
                 if (translated < 15)
                 {
                     translated++;
-                    translatedDistance -= 0.07f;
-                    transform.position = new Vector2(player.transform.position.x - 1.1f + translatedDistance, player.transform.position.y + 0.05f);
+                    translatedDistanceBackward -= 0.07f;
+                    transform.position = new Vector2(player.transform.position.x - 1.1f + translatedDistanceBackward, player.transform.position.y + 0.05f);
                 }
                 else
                 {
@@ -135,7 +137,8 @@ public class SpearWeapon : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             translated = 0;
-            translatedDistance = 0;
+            translatedDistanceForward = 0;
+            translatedDistanceBackward = 0;
             spearFiring = false;
             if (!hasSpear) {
                 hasSpear = true;
