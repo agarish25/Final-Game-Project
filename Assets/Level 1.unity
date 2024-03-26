@@ -7261,6 +7261,7 @@ MonoBehaviour:
   b: 50
   c: 51
   d: 52
+  InventoryItemData: {fileID: 1672305536}
 --- !u!114 &2026518420
 MonoBehaviour:
   m_ObjectHideFlags: 0

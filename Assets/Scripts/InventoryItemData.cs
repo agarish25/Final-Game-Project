@@ -58,7 +58,11 @@ public class InventoryItemData : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (djChange != doubleJumpActive) {
+        if ((doubleJumpActive == 2 || doubleJumpActive == 3) && (djChange == 2 || djChange == 3))
+        {
+         
+        }
+        else if (djChange != doubleJumpActive) {
             djButton.gameObject.SetActive(true);
             if (doubleJumpActive == 1) {
                 for (int i = 0; i < 12; i++) {
@@ -69,7 +73,7 @@ public class InventoryItemData : MonoBehaviour
                     }
                 }
             }
-            else if (doubleJumpActive == 2) {
+            else if (doubleJumpActive == 2 || doubleJumpActive == 3) {
                 for (int j = 0; j < 2; j++) {
                     if (passiveData[j] == 0) {
                         equippedData[j] = 1;
@@ -94,7 +98,11 @@ public class InventoryItemData : MonoBehaviour
             }
             djChange = doubleJumpActive;
         }
-        if (dChange != dashActive) {
+        if ((dashActive == 2 || dashActive == 3) && (dChange == 2 || dChange == 3))
+        {
+
+        }
+        else if (dChange != dashActive) {
             dashButton.gameObject.SetActive(true);
             if (dashActive == 1) {
                 for (int i = 0; i < 12; i++) {
@@ -105,7 +113,7 @@ public class InventoryItemData : MonoBehaviour
                     }
                 }
             }
-            else if (dashActive == 2) {
+            else if (dashActive == 2 || dashActive == 3) {
                 for (int j = 0; j < 4; j++) {
                     if (equippedData[j] == 0) {
                         equippedData[j] = 2;
@@ -130,7 +138,11 @@ public class InventoryItemData : MonoBehaviour
             }
             dChange = dashActive;
         }
-        if (cjChange != chargeJumpActive) {
+        if ((chargeJumpActive == 2 || chargeJumpActive == 3) && (cjChange == 2 || cjChange == 3))
+        {
+
+        }
+        else if (cjChange != chargeJumpActive) {
             cjButton.gameObject.SetActive(true);
             if (chargeJumpActive == 1) {
                 for (int i = 0; i < 12; i++) {
@@ -141,7 +153,7 @@ public class InventoryItemData : MonoBehaviour
                     }
                 }
             }
-            else if (chargeJumpActive == 2) {
+            else if (chargeJumpActive == 2 || chargeJumpActive == 3) {
                 for (int j = 0; j < 2; j++) {
                     if (passiveData[j] == 0) {
                         passiveData[j] = 3;
@@ -166,7 +178,11 @@ public class InventoryItemData : MonoBehaviour
             }
             cjChange = chargeJumpActive;
         }
-        if (gChange != grapplerActive) {
+        if ((grapplerActive == 2 || grapplerActive == 3) && (gChange == 2 || gChange == 3))
+        {
+
+        }
+        else if (gChange != grapplerActive) {
             grapplerButton.gameObject.SetActive(true);
             if (grapplerActive == 1) {
                 for (int i = 0; i < 12; i++) {
@@ -177,7 +193,7 @@ public class InventoryItemData : MonoBehaviour
                     }
                 }
             }
-            else if (grapplerActive == 2) {
+            else if (grapplerActive == 2 || grapplerActive == 3) {
                 for (int j = 0; j < 4; j++) {
                     if (equippedData[j] == 0) {
                         equippedData[j] = 4;
