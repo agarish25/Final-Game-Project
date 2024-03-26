@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryOpen : MonoBehaviour
 {
@@ -9,10 +10,22 @@ public class InventoryOpen : MonoBehaviour
     KeyCode i;
     [SerializeField]
     Canvas canvas1;
-    bool pause = false;
+    public bool pause = false;
+    [SerializeField]
+    InventoryItemData InventoryItemData;
+    [SerializeField]
+    Button d;
+    [SerializeField]
+    Button g;
+    [SerializeField]
+    Button s;
+
 
     public PlayerHealthManager PlayerHealthManager;
     void Start() {
+        d.gameObject.SetActive(false);
+        g.gameObject.SetActive(false);
+        s.gameObject.SetActive(false);
         InventoryPanel.SetActive(false);
         Time.timeScale = 1;
     }
@@ -37,6 +50,9 @@ public class InventoryOpen : MonoBehaviour
         pause = true;
         PlayerHealthManager.overallBar.SetActive(false);
         canvas1.gameObject.SetActive(false);
+        d.gameObject.SetActive(false);
+        g.gameObject.SetActive(false);
+        s.gameObject.SetActive(false);
     }
 
     public void Continue() {
@@ -45,5 +61,56 @@ public class InventoryOpen : MonoBehaviour
         pause = false;
         PlayerHealthManager.overallBar.SetActive(true);
         canvas1.gameObject.SetActive(true);
+        if (InventoryItemData.dashActive == 2 || InventoryItemData.dashActive == 3)
+        {
+            d.gameObject.SetActive(true);
+            int i = 0;
+            for (int a = 0; a < 4; a++)
+            {
+                if (InventoryItemData.equippedData[a] == 2)
+                {
+                    i = a;
+                }
+            }
+            d.transform.localPosition = new Vector2(-90 + 60 * i, -120);
+        }
+        else
+        {
+            d.gameObject.SetActive(false);
+        }
+        if (InventoryItemData.spearActive == 2 || InventoryItemData.spearActive == 3)
+        {
+            s.gameObject.SetActive(true);
+            int i = 0;
+            for (int a = 0; a < 4; a++)
+            {
+                if (InventoryItemData.equippedData[a] == 5)
+                {
+                    i = a;
+                }
+            }
+            s.transform.localPosition = new Vector2(-90 + 60 * i, -120);
+        }
+        else
+        {
+            s.gameObject.SetActive(false);
+        }
+        if (InventoryItemData.grapplerActive == 2 || InventoryItemData.grapplerActive == 3)
+        {
+            g.gameObject.SetActive(true);
+            int i = 0;
+            for (int a = 0; a < 4; a++)
+            {
+                if (InventoryItemData.equippedData[a] == 4)
+                {
+                    i = a;
+                }
+            }
+            g.transform.localPosition = new Vector2(-90 + 60 * i, -120);
+        }
+        else
+        {
+            g.gameObject.SetActive(false);
+        }
     }
 }

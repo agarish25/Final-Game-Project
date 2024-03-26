@@ -18,6 +18,8 @@ public class InventoryItemData : MonoBehaviour
     public int spearActive;
     [SerializeField]
     public int healthGemActive;
+    [SerializeField]
+    InventoryOpen InventoryOpen;
 
     int djChange = 0;
     int dChange = 0;
@@ -294,7 +296,7 @@ public class InventoryItemData : MonoBehaviour
         else {
             PlayerController.doubleJumpActive = false;
         }
-        if (dashActive == 2) {
+        if (dashActive == 3) {
             PlayerController.dashActive = true;
         }
         else {
@@ -306,7 +308,7 @@ public class InventoryItemData : MonoBehaviour
         else {
             PlayerController.chargeJumpActive = false;
         }
-        if (grapplerActive == 2) {
+        if (grapplerActive == 3) {
             PlayerController.grapplerActive = true;
             GrappleHook.grapplerEnabled = true;
         }
@@ -314,7 +316,7 @@ public class InventoryItemData : MonoBehaviour
             PlayerController.grapplerActive = false;
             GrappleHook.grapplerEnabled = false;
         }
-        if (spearActive == 2) {
+        if (spearActive == 3) {
             SpearWeapon.spearEnabled = true;
         }
         else {
@@ -331,58 +333,86 @@ public class InventoryItemData : MonoBehaviour
     }
 
     public void djClicked() {
-        if (doubleJumpActive == 1) {
-            doubleJumpActive = 2;
-        }
-        else {
-            doubleJumpActive = 1;
+        if (InventoryOpen.pause)
+        {
+            if (doubleJumpActive == 1)
+            {
+                doubleJumpActive = 2;
+            }
+            else
+            {
+                doubleJumpActive = 1;
+            }
         }
     }
 
     public void cjClicked() {
-        if (chargeJumpActive == 1) {
-            chargeJumpActive = 2;
-        }
-        else {
-            chargeJumpActive = 1;
+        if (InventoryOpen.pause)
+        {
+            if (chargeJumpActive == 1)
+            {
+                chargeJumpActive = 2;
+            }
+            else
+            {
+                chargeJumpActive = 1;
+            }
         }
     }
 
     public void dClicked() {
-        if (dashActive == 1) {
-            dashActive = 2;
-        }
-        else {
-            dashActive = 1;
+        if (InventoryOpen.pause)
+        {
+            if (dashActive == 1)
+            {
+                dashActive = 2;
+            }
+            else
+            {
+                dashActive = 1;
+            }
         }
     }
 
     public void gClicked() {
-        if (grapplerActive == 1) {
-            grapplerActive = 2;
-        }
-        else {
-            grapplerActive = 1;
+        if (InventoryOpen.pause)
+        {
+            if (grapplerActive == 1)
+            {
+                grapplerActive = 2;
+            }
+            else
+            {
+                grapplerActive = 1;
+            }
         }
     }
     
     public void sClicked() {
-        if (spearActive == 1) {
-            spearActive = 2;
-        }
-        else {
-            spearActive = 1;
+        if (InventoryOpen.pause)
+        {
+            if (spearActive == 1)
+            {
+                spearActive = 2;
+            }
+            else
+            {
+                spearActive = 1;
+            }
         }
     }
     public void hgClicked()
     {
-        if (healthGemActive == 1)
+        if (InventoryOpen.pause)
         {
-            healthGemActive = 2;
-        }
-        else
-        {
-            healthGemActive = 1;
+            if (healthGemActive == 1)
+            {
+                healthGemActive = 2;
+            }
+            else
+            {
+                healthGemActive = 1;
+            }
         }
     }
 }
