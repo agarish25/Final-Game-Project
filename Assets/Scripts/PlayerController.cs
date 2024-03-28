@@ -149,11 +149,11 @@ public class PlayerController : MonoBehaviour
             }
             if (dashActive)
             {
-                if (Input.GetKeyDown(e))
+                if (Input.GetMouseButtonDown(1))
                 {
                     isDashing = 2;
                 }
-                if (Input.GetKeyDown(q))
+                if (Input.GetMouseButtonDown(0))
                 {
                     isDashing = 1;
                 }
