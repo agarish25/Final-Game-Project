@@ -62,7 +62,7 @@ public class GrappleHook : MonoBehaviour
         }
         if (frozen)
             transform.position = frozenPos;
-        if (Input.GetKeyUp(grapple) && grapplerEnabled)
+        if (Input.GetMouseButtonDown(0) && grapplerEnabled && !grappleActive)
         {
             grappleActive = !grappleActive;
             frozen = false;
@@ -74,7 +74,10 @@ public class GrappleHook : MonoBehaviour
                 transform.position = new Vector2(player.transform.position.x, player.transform.position.y + 0.5f);
                 GetComponent<Rigidbody2D>().AddForce(Vector2.up * grappleForce, ForceMode2D.Impulse);
             }
-            else
+        }
+        if (Input.GetMouseButtonDown(1) && grapplerEnabled && grappleActive) {
+            grappleActive = !grappleActive;
+            if (!grappleActive)
             {
                 Player.GetComponent<Rigidbody2D>().AddForce(Vector2.up * grappleExitForce * (transform.position.y - Player.transform.position.y), ForceMode2D.Impulse);
                 transform.position = new Vector2(0, -100);
