@@ -7,6 +7,7 @@ public class KeyController : MonoBehaviour
 
     bool goUp = false;
     bool floating = true;
+    bool hasKey = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +51,7 @@ public class KeyController : MonoBehaviour
         {
             transform.position = new Vector2(0, 1000);
             gameObject.GetComponent<Renderer>().enabled = false;
+            hasKey = true;
         }
     }
 }
