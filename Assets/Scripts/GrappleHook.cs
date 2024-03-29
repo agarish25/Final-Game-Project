@@ -79,7 +79,10 @@ public class GrappleHook : MonoBehaviour
             grappleActive = !grappleActive;
             if (!grappleActive)
             {
-                Player.GetComponent<Rigidbody2D>().AddForce(Vector2.up * grappleExitForce * (transform.position.y - Player.transform.position.y), ForceMode2D.Impulse);
+                if (grapplerStick)
+                {
+                    Player.GetComponent<Rigidbody2D>().AddForce(Vector2.up * grappleExitForce * (transform.position.y - Player.transform.position.y), ForceMode2D.Impulse);
+                }
                 transform.position = new Vector2(0, -100);
                 grapplerOffset = 0;
                 gameObject.GetComponent<Renderer>().enabled = false;
