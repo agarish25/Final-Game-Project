@@ -45,6 +45,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     public PlayerHealthManager PlayerHealthManager;
+    [SerializeField]
+    public KeyController KeyController;
 
     public GameObject grappler;
     public GrappleHook GrappleHook;
@@ -303,6 +305,12 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("grappler");
             GrappleHook.grapplerEnabled = true;
+        }
+
+        if (collision.gameObject.CompareTag("Door") && KeyController.hasKey)
+        {
+            Debug.Log("door");
+            Destroy(collision.gameObject);
         }
     }
 
