@@ -3934,7 +3934,7 @@ MonoBehaviour:
   left: 0
   right: 0
   player: {fileID: 1952243508}
-  grappleForce: 10
+  grappleForce: 13
   a: 97
   d: 100
   grappleActive: 0
