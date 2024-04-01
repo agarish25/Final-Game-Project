@@ -26,7 +26,7 @@ public class PlayerHealthManager : MonoBehaviour
 
     private void Update()
     {
-        if (healthAmount <= 0)
+        if (healthAmount <= 4)
         {
             Player.transform.position = new Vector2(PlayerController.xSpawn, PlayerController.ySpawn);
             PlayerController.deaths++;
