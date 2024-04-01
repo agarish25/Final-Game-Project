@@ -7,7 +7,9 @@ public class KeyController : MonoBehaviour
 
     bool goUp = false;
     bool floating = true;
-    bool hasKey = false;
+
+    [SerializeField]
+    public bool hasKey = false;
     // Start is called before the first frame update
     void Start()
     {
