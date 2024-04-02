@@ -60,6 +60,8 @@ public class PlayerController : MonoBehaviour
     public float timeHeld;
     public float grapplerSpeed;
     public float grapplerVert;
+    public float translatedDistanceUp;
+    public float translate;
     bool isOnGround;
     bool doubleJump;
     int isDashing;
@@ -84,6 +86,7 @@ public class PlayerController : MonoBehaviour
         dashTimer = 0;
         dashCool = 100;
         deaths = 0;
+        translate = 0;
     }
 
     // Update is called once per frame
@@ -310,8 +313,22 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Door") && KeyController.hasKey)
         {
             Debug.Log("door");
-            Destroy(collision.gameObject);
+            StartCoroutine(DoorCountdownRoutine(collision));
+            Destroy(collision.gameObject, 4f);
+            translate = 0;
         }
+    }
+
+    IEnumerator DoorCountdownRoutine(Collision2D collision)
+    {
+        if (translate < 15000)
+        {
+            translate++;
+            translatedDistanceUp += 0.01f;
+            collision.transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y + translatedDistanceUp);
+        }
+        yield return new WaitForSeconds(10);
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
