@@ -7293,7 +7293,7 @@ MonoBehaviour:
   grapplerActive: 0
   healthGemActive: 0
   PlayerHealthManager: {fileID: 794932401}
-  KeyController: {fileID: 0}
+  KeyController: {fileID: 7625585}
   grappler: {fileID: 1028803741}
   GrappleHook: {fileID: 1028803742}
   xSpawn: 0
