@@ -306,15 +306,13 @@ public class PlayerController : MonoBehaviour
         // }
         if (collision.gameObject.CompareTag("Grappler"))
         {
-            Debug.Log("grappler");
             GrappleHook.grapplerEnabled = true;
         }
 
         if (collision.gameObject.CompareTag("Door") && KeyController.hasKey)
         {
-            Debug.Log("door");
             StartCoroutine(DoorCountdownRoutine(collision));
-            Destroy(collision.gameObject, 4f);
+            Destroy(collision.gameObject, 0.6f);
             translate = 0;
         }
     }
@@ -324,7 +322,7 @@ public class PlayerController : MonoBehaviour
         if (translate < 15000)
         {
             translate++;
-            translatedDistanceUp += 0.01f;
+            translatedDistanceUp += 1f;
             collision.transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y + translatedDistanceUp);
         }
         yield return new WaitForSeconds(10);

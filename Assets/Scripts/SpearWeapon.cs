@@ -74,7 +74,7 @@ public class SpearWeapon : MonoBehaviour
                 StartCoroutine(SpearCountdownRoutine());
                 spearJustEnd = false;
             }
-            if (Input.GetMouseButtonDown(0) && !spearFiring)
+            if (Input.GetMouseButtonDown(1) && !spearFiring)
             {
                 spearForward = true;
                 Debug.Log("Spear Fired");
@@ -85,7 +85,7 @@ public class SpearWeapon : MonoBehaviour
                 translated = 0;
             }
 
-            if (Input.GetMouseButtonDown(1) && !spearFiring)
+            if (Input.GetMouseButtonDown(0) && !spearFiring)
             {
                 spearForward = false;
                 Debug.Log("Opposite Spear Fired");
