@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class MapScript : MonoBehaviour
 {
-    public float[,] mapData = { { -2.3581f, -1.82f + 3} };
-    public int currentSpawn;
-
+    public int currentSpawn = 0;
+    [SerializeField]
+    public List<List<float>> mapData = new List<List<float>>();
     [SerializeField]
     PlayerController PlayerController;
-
+    private void Start()
+    {
+        mapData.Add(new List<float> { transform.position.x, transform.position.y + 3 });
+    }
     // Update is called once per frame
     void Update()
     {
-        PlayerController.xSpawn = mapData[currentSpawn, 0];
-        PlayerController.ySpawn = mapData[currentSpawn, 1];
+        Debug.Log(mapData[currentSpawn][0]);
+        PlayerController.xSpawn = mapData[currentSpawn][0];
+        PlayerController.ySpawn = mapData[currentSpawn][1];
     }
 }

@@ -22,8 +22,6 @@ public class HotbarSelector : MonoBehaviour
     // Update is called once per frame
     void Update()   
     {
-        Debug.Log(InventoryItemData.equippedData[i]);
-        Debug.Log("g: " + InventoryItemData.grapplerActive + " s: " + InventoryItemData.spearActive + " d: " + InventoryItemData.doubleJumpActive);
         if (InventoryItemData.equippedData[i] == 2)
          {
              InventoryItemData.dashActive = 3;
