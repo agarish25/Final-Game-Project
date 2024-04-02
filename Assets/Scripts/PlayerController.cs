@@ -303,13 +303,11 @@ public class PlayerController : MonoBehaviour
         // }
         if (collision.gameObject.CompareTag("Grappler"))
         {
-            Debug.Log("grappler");
             GrappleHook.grapplerEnabled = true;
         }
 
         if (collision.gameObject.CompareTag("Door") && KeyController.hasKey)
         {
-            Debug.Log("door");
             Destroy(collision.gameObject);
         }
     }
