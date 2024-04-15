@@ -19,7 +19,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isGameActive)
+        {
+            Time.timeScale = 1;
+        }
+        else if (!isGameActive)
+        {
+            Time.timeScale = 0;
+        }
     }
 
     public void StartGame() {
