@@ -896,6 +896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MapPanel: {fileID: 1858913841}
+  InventoryPanel: {fileID: 1587349284}
   m: 109
   pause: 0
 --- !u!4 &97955755
@@ -5293,6 +5294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InventoryPanel: {fileID: 1587349284}
+  MapPanel: {fileID: 1290321988}
   i: 105
   canvas1: {fileID: 1057386231}
   pause: 0
