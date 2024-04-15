@@ -6494,6 +6494,12 @@ MonoBehaviour:
   spearActive: 0
   healthGemActive: 0
   InventoryOpen: {fileID: 1148526038}
+  djChange: 0
+  dChange: 0
+  cjChange: 0
+  gChange: 0
+  sChange: 0
+  hgChange: 0
   djButton: {fileID: 1710659087}
   dashButton: {fileID: 892589324}
   cjButton: {fileID: 89263316}

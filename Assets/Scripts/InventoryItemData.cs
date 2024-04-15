@@ -20,12 +20,12 @@ public class InventoryItemData : MonoBehaviour
     [SerializeField]
     InventoryOpen InventoryOpen;
 
-    int djChange = 0;
-    int dChange = 0;
-    int cjChange = 0;
-    int gChange = 0;
-    int sChange = 0;
-    int hgChange = 0;
+    public int djChange = 0;
+    public int dChange = 0;
+    public int cjChange = 0;
+    public int gChange = 0;
+    public int sChange = 0;
+    public int hgChange = 0;
 
     public Button djButton;
     public Button dashButton;
