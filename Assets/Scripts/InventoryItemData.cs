@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class InventoryItemData : MonoBehaviour
 {
-
     [SerializeField]
     public int doubleJumpActive;
     [SerializeField]
