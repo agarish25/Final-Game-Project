@@ -312,7 +312,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Door") && KeyController.hasKey)
         {
             StartCoroutine(DoorCountdownRoutine(collision));
-            Destroy(collision.gameObject, 0.6f);
             translate = 0;
         }
     }
@@ -322,7 +321,7 @@ public class PlayerController : MonoBehaviour
         if (translate < 15000)
         {
             translate++;
-            translatedDistanceUp += 1f;
+            translatedDistanceUp += 0.01f;
             collision.transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y + translatedDistanceUp);
         }
         yield return new WaitForSeconds(10);
