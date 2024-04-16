@@ -16,7 +16,6 @@ public class MapScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(currentSpawn);
         PlayerController.xSpawn = mapData[currentSpawn][0];
         PlayerController.ySpawn = mapData[currentSpawn][1];
     }

@@ -62,8 +62,8 @@ public class PlayerController : MonoBehaviour
     public float grapplerVert;
     public float translatedDistanceUp;
     public float translate;
-    bool isOnGround;
-    bool doubleJump;
+    public bool isOnGround;
+    public bool doubleJump;
     int isDashing;
     int dashTimer;
     public int dashCool;
@@ -289,10 +289,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isOnGround = false;
-        }
         if (collision.gameObject.CompareTag("Enemy"))
         {
             PlayerHealthManager.healthAmount -= 10;
@@ -335,14 +331,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isOnGround = false;
-            if (gameObject.transform.position.y > collision.gameObject.transform.position.y) { 
-                if (doubleJumpActive)
-                    doubleJump = true;
-            }
-        }
         // if (collision.gameObject.CompareTag("Checkpoint"))
         // {
         //     isOnGround = false;
@@ -377,11 +365,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isOnGround = true;
-            doubleJump = false;
-        }
         if (collision.gameObject.CompareTag("Enemy"))
         {
             PlayerHealthManager.healthAmount -= 0.2f;
