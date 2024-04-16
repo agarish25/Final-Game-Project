@@ -92,6 +92,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            transform.position = new Vector2(-2.35f, 0);
+        }
         this.grapplerStick = GrappleHook.grapplerStick;
         if (grapplerStick)
         {
