@@ -313,7 +313,7 @@ public class PlayerController : MonoBehaviour
             GrappleHook.grapplerEnabled = true;
         }
 
-        if (collision.gameObject.CompareTag("Door") && KeyController.hasKey)
+        if (collision.gameObject.CompareTag("Door") && KeyController.hasKey )
         {
             StartCoroutine(DoorCountdownRoutine(collision));
             translate = 0;
@@ -322,10 +322,10 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator DoorCountdownRoutine(Collision2D collision)
     {
-        if (translate < 15000)
+        if (translate < 150)
         {
             translate++;
-            translatedDistanceUp += 0.01f;
+            translatedDistanceUp += 1f;
             collision.transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y + translatedDistanceUp);
         }
         yield return new WaitForSeconds(10);
