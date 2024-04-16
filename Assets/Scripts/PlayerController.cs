@@ -313,7 +313,7 @@ public class PlayerController : MonoBehaviour
             GrappleHook.grapplerEnabled = true;
         }
 
-        if (collision.gameObject.CompareTag("Door") && KeyController.hasKey )
+        if (collision.gameObject.CompareTag("Door") && KeyController.hasKey)
         {
             StartCoroutine(DoorCountdownRoutine(collision));
             translate = 0;
