@@ -36,6 +36,5 @@ public class PlatformMovement : MonoBehaviour
         {
             gameObject.transform.position = new Vector2(transform.position.x + direction.x * speed, transform.position.y + direction.y * speed);
         }
-        Debug.Log(toA1 + " " + distance);
     }
 }

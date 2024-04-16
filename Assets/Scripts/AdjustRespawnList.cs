@@ -23,6 +23,7 @@ public class AdjustRespawnList: MonoBehaviour
                 activated = true;
                 number = mapScript.mapData.Count;
                 mapScript.mapData.Add(new List<float> { transform.position.x, transform.position.y + 3 });
+                mapScript.currentSpawn = number;
             }
         }
     }
