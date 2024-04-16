@@ -64,8 +64,6 @@ public class SpearWeapon : MonoBehaviour
 
 
 
-
-
         if (spearEnabled)
         {
             Debug.Log("Enabled");

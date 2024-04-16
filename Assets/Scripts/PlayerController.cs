@@ -322,11 +322,12 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator DoorCountdownRoutine(Collision2D collision)
     {
-        if (translate < 150)
+        
+        if (translate < 45)
         {
             translate++;
             translatedDistanceUp += 1f;
-            collision.transform.position = new Vector2(collision.transform.position.x, collision.transform.position.y + translatedDistanceUp);
+            collision.transform.Translate(Vector2.up * translatedDistanceUp * Time.deltaTime);
         }
         yield return new WaitForSeconds(10);
 
