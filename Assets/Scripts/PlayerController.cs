@@ -79,7 +79,6 @@ public class PlayerController : MonoBehaviour
         direction = true;
         xSpawn = 0;
         ySpawn = 0;
-        isOnGround = false;
         doubleJump = false;
         isDashing = 0;
         timeHeld = 0;

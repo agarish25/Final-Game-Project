@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerOnGround : MonoBehaviour
 {
     public PlayerController playerController;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,12 +14,20 @@ public class PlayerOnGround : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(playerController.isOnGround);
+        transform.position = new Vector2(player.transform.position.x, player.transform.position.y - 0.5f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("collided");
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            Debug.Log("collided");
+            playerController.isOnGround = true;
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
         if (collision.gameObject.CompareTag("Ground"))
         {
             playerController.isOnGround = true;
@@ -27,9 +36,9 @@ public class PlayerOnGround : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        Debug.Log("left");
         if (collision.gameObject.CompareTag("Ground"))
         {
+            Debug.Log("left");
             playerController.isOnGround = false;
             if (playerController.doubleJumpActive)
             {
