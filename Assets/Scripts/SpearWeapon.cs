@@ -22,8 +22,6 @@ public class SpearWeapon : MonoBehaviour
 
     bool hasSpear = false;
     public bool spearEnabled;
-    bool goUp = false;
-    bool floating = true;
     bool spearFiring;
     bool spearJustEnd = false;
     float translated;
@@ -42,27 +40,6 @@ public class SpearWeapon : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (floating)
-        {
-            if (gameObject.transform.position.y >= -2.50)
-            {
-                goUp = false;
-            }
-            else if (gameObject.transform.position.y <= -3.0f)
-            {
-                goUp = true;
-            }
-            if (goUp)
-            {
-                transform.position = new Vector2(transform.position.x, transform.position.y + 0.015f);
-            }
-            else if (!goUp)
-            {
-                transform.position = new Vector2(transform.position.x, transform.position.y - 0.015f);
-            }
-        }
-
-
 
         if (spearEnabled)
         {
@@ -147,7 +124,6 @@ public class SpearWeapon : MonoBehaviour
             gameObject.GetComponent<Renderer>().enabled = false;
             spearHead.GetComponent<Renderer>().enabled = false;
             transform.eulerAngles = new Vector2(0, 0);
-            floating = false;
             spearJustEnd = true;
         }
         else

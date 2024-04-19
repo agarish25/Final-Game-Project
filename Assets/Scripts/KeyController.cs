@@ -5,9 +5,6 @@ using UnityEngine;
 public class KeyController : MonoBehaviour
 {
 
-    bool goUp = false;
-    bool floating = true;
-
     [SerializeField]
     public bool hasKey = false;
     // Start is called before the first frame update
@@ -15,31 +12,6 @@ public class KeyController : MonoBehaviour
     {
         
     }
-
-    private void FixedUpdate()
-    {
-        if (floating)
-        {
-            if (gameObject.transform.position.y >= -2.75)
-            {
-                goUp = false;
-            }
-            else if (gameObject.transform.position.y <= -3.0f)
-            {
-                goUp = true;
-            }
-            if (goUp)
-            {
-                transform.position = new Vector2(transform.position.x, transform.position.y + 0.015f);
-            }
-            else if (!goUp)
-            {
-                transform.position = new Vector2(transform.position.x, transform.position.y - 0.015f);
-            }
-        }
-
-    }
-
 
     // Update is called once per frame
     void Update()
