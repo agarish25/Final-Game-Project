@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 7625584}
   - component: {fileID: 7625583}
   - component: {fileID: 7625585}
+  - component: {fileID: 7625586}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -270,6 +271,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasKey: 0
+--- !u!114 &7625586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7625580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63265ddb00dfd8d43af82c49df2c80ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amp: 0.26
+  freq: 3.98
 --- !u!1 &45090903
 GameObject:
   m_ObjectHideFlags: 0
@@ -15539,6 +15554,7 @@ GameObject:
   - component: {fileID: 2126293398}
   - component: {fileID: 2126293397}
   - component: {fileID: 2126293401}
+  - component: {fileID: 2126293402}
   m_Layer: 0
   m_Name: SpearWeapon
   m_TagString: Spear
@@ -15681,6 +15697,20 @@ MonoBehaviour:
   PlayerController: {fileID: 0}
   spearForward: 1
   spearEnabled: 0
+--- !u!114 &2126293402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126293396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63265ddb00dfd8d43af82c49df2c80ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amp: 0.32
+  freq: 3.02
 --- !u!1 &2127252740
 GameObject:
   m_ObjectHideFlags: 0
