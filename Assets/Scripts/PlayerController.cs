@@ -71,6 +71,8 @@ public class PlayerController : MonoBehaviour
     Color dashColor;
     TrailRenderer myTrail;
 
+    private float coins;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -86,6 +88,7 @@ public class PlayerController : MonoBehaviour
         dashCool = 100;
         deaths = 0;
         translate = 0;
+        coins = 0;
     }
 
     // Update is called once per frame
@@ -312,6 +315,11 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(DoorCountdownRoutine(collision));
             translate = 0;
+        }
+
+        if (collision.gameObject.CompareTag("Coin")) {
+            Destroy(collision.gameObject);
+            coins++;
         }
     }
 

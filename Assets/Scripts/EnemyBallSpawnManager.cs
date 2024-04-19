@@ -37,7 +37,7 @@ public class EnemyBallSpawnManager : MonoBehaviour
             ballPrefab.transform.position = new Vector2(spawnPosX + change, spawnPosY);
         } else
         {
-            Destroy(ballPrefab);
+            //Destroy(ballPrefab);
         }
     }
     void SpawnRandomBall()
