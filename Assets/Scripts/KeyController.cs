@@ -25,6 +25,7 @@ public class KeyController : MonoBehaviour
         {
             transform.position = new Vector2(0, 1000);
             gameObject.GetComponent<Renderer>().enabled = false;
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
             hasKey = true;
         }
     }

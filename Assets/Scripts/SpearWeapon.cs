@@ -46,11 +46,13 @@ public class SpearWeapon : MonoBehaviour
             Debug.Log("Enabled");
             if (spearJustEnd)
             {
-                StartCoroutine(SpearCountdownRoutine());
+                gameObject.GetComponent<Renderer>().enabled = false;
+                spearHead.GetComponent<Renderer>().enabled = false;
                 spearJustEnd = false;
             }
-            if (Input.GetMouseButtonDown(1) && !spearFiring)
+            if (Input.GetKeyDown(spearKey))
             {
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 spearForward = true;
                 Debug.Log("Spear Fired");
                 spearFiring = true;
@@ -60,8 +62,9 @@ public class SpearWeapon : MonoBehaviour
                 translated = 0;
             }
 
-            if (Input.GetMouseButtonDown(0) && !spearFiring)
+            if (Input.GetKeyDown(oppositeSpearKey) && !spearFiring)
             {
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 spearForward = false;
                 Debug.Log("Opposite Spear Fired");
                 spearFiring = true;
@@ -102,10 +105,11 @@ public class SpearWeapon : MonoBehaviour
             }
         }
     }
-    IEnumerator SpearCountdownRoutine() {
-        gameObject.GetComponent<Renderer>().enabled = false;
-        spearHead.GetComponent<Renderer>().enabled = false;
-        yield return new WaitForSeconds(5);
+
+    IEnumerator SpearCountdownRoutine()
+    {
+        
+        yield return new WaitForSeconds(1);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -125,6 +129,8 @@ public class SpearWeapon : MonoBehaviour
             spearHead.GetComponent<Renderer>().enabled = false;
             transform.eulerAngles = new Vector2(0, 0);
             spearJustEnd = true;
+            spearEnabled = true;
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
         else
         {
