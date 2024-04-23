@@ -295,17 +295,11 @@ public class PlayerController : MonoBehaviour
         {
             PlayerHealthManager.healthAmount -= 10;
         }
-        // if (collision.gameObject.CompareTag("Killzone"))
-        // {
-        //     transform.position = new Vector2(xSpawn, ySpawn);
-        //     deaths++;
-        // }
-        // if (collision.gameObject.CompareTag("Checkpoint"))
-        // {
-        //     isOnGround = false;
-        //     xSpawn = collision.transform.position.x;
-        //     ySpawn = collision.transform.position.y + 10;
-        // }
+        if (collision.gameObject.CompareTag("Deathbarrier"))
+        {
+            transform.position = new Vector2(xSpawn, ySpawn);
+            deaths++;
+        }
         if (collision.gameObject.CompareTag("Grappler"))
         {
             GrappleHook.grapplerEnabled = true;
