@@ -19822,10 +19822,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1952243508}
   spearHead: {fileID: 1081338424}
-  spearKey: 103
-  oppositeSpearKey: 99
+  spearKey: 98
+  oppositeSpearKey: 110
   InventoryItemData: {fileID: 1672305536}
-  PlayerController: {fileID: 0}
+  PlayerController: {fileID: 1952243511}
   spearForward: 1
   spearEnabled: 0
 --- !u!114 &2126293402
