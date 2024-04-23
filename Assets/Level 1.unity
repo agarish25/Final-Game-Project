@@ -6755,6 +6755,7 @@ GameObject:
   - component: {fileID: 742350967}
   - component: {fileID: 742350966}
   - component: {fileID: 742350970}
+  - component: {fileID: 742350971}
   m_Layer: 0
   m_Name: EnableCJ
   m_TagString: Grappler
@@ -6890,6 +6891,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inventory: {fileID: 1672305535}
   InventoryItemData: {fileID: 1672305536}
+--- !u!114 &742350971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742350965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63265ddb00dfd8d43af82c49df2c80ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amp: 0.35
+  freq: 3
 --- !u!1 &744074031
 GameObject:
   m_ObjectHideFlags: 0
