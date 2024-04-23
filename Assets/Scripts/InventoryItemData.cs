@@ -156,7 +156,7 @@ public class InventoryItemData : MonoBehaviour
                 for (int j = 0; j < 2; j++) {
                     if (passiveData[j] == 0) {
                         passiveData[j] = 3;
-                        cjButton.gameObject.transform.localPosition = new Vector2(-300 * -(((j + 1) % 2) * 2 - 1), -80);
+                        cjButton.gameObject.transform.localPosition = new Vector2(300 * -(((j + 1) % 2) * 2 - 1), -80);
                         j = 2;
                     }
                 }
@@ -278,7 +278,7 @@ public class InventoryItemData : MonoBehaviour
                     if (passiveData[j] == 0)
                     {
                         passiveData[j] = 6;
-                        hgButton.gameObject.transform.localPosition = new Vector2(-300 * -(((j + 1) % 2) * 2 - 1), -80);
+                        hgButton.gameObject.transform.localPosition = new Vector2(300 * -(((j + 1) % 2) * 2 - 1), -80);
                         j = 2;
                     }
                 }
