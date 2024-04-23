@@ -23,23 +23,41 @@ public class HotbarSelector : MonoBehaviour
     void Update()   
     {
         if (InventoryItemData.equippedData[i] == 2)
-         {
-             InventoryItemData.dashActive = 3;
-             InventoryItemData.spearActive = 2;
-             InventoryItemData.grapplerActive = 2;
+        {
+            InventoryItemData.dashActive = 3;
+            if (InventoryItemData.spearActive == 3)
+            {
+                InventoryItemData.spearActive = 2;
+            }
+            if (InventoryItemData.grapplerActive == 3)
+            {
+                InventoryItemData.grapplerActive = 2;
+            }
          }
          else if (InventoryItemData.equippedData[i] == 5)
          {
-             InventoryItemData.dashActive = 2;
-             InventoryItemData.spearActive = 3;
-             InventoryItemData.grapplerActive = 2;
-         }
+            InventoryItemData.spearActive = 3;
+            if (InventoryItemData.dashActive == 3)
+            {
+                InventoryItemData.dashActive = 2;
+            }
+            if (InventoryItemData.grapplerActive == 3)
+            {
+                InventoryItemData.grapplerActive = 2;
+            }
+        }
          else if (InventoryItemData.equippedData[i] == 4)
          {
-             InventoryItemData.dashActive = 2;
-             InventoryItemData.spearActive = 2;
-             InventoryItemData.grapplerActive = 3;
-         }
+            InventoryItemData.grapplerActive = 3;
+            if (InventoryItemData.spearActive == 3)
+            {
+                InventoryItemData.spearActive = 2;
+            }
+            if (InventoryItemData.dashActive == 3)
+            {
+                InventoryItemData.dashActive = 2;
+            }
+        }
         else
         {
             if (InventoryItemData.dashActive == 3)
