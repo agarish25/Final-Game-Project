@@ -76,7 +76,7 @@ public class InventoryItemData : MonoBehaviour
                 for (int j = 0; j < 2; j++) {
                     if (passiveData[j] == 0) {
                         equippedData[j] = 1;
-                        djButton.gameObject.transform.localPosition = new Vector2(-300 * -(((j + 1) % 2) - 1), -80);
+                        djButton.gameObject.transform.localPosition = new Vector2(300 * -(((j + 1) % 2) * 2 - 1), -80);
                         j = 2;
                     }
                 }
