@@ -21,7 +21,6 @@ public class PlayerOnGround : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Respawn"))
         {
-            Debug.Log("collided");
             playerController.isOnGround = true;
         }
     }
@@ -38,7 +37,6 @@ public class PlayerOnGround : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Respawn"))
         {
-            Debug.Log("left");
             playerController.isOnGround = false;
             if (playerController.doubleJumpActive)
             {
