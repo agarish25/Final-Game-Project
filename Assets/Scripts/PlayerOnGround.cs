@@ -19,7 +19,7 @@ public class PlayerOnGround : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Respawn"))
         {
             Debug.Log("collided");
             playerController.isOnGround = true;
@@ -28,7 +28,7 @@ public class PlayerOnGround : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Respawn"))
         {
             playerController.isOnGround = true;
         }
@@ -36,7 +36,7 @@ public class PlayerOnGround : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Respawn"))
         {
             Debug.Log("left");
             playerController.isOnGround = false;
