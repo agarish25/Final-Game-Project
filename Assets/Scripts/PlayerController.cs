@@ -323,10 +323,10 @@ public class PlayerController : MonoBehaviour
         if (translate < 45)
         {
             translate++;
-            translatedDistanceUp += 1f;
+            translatedDistanceUp += 50f;
             collision.transform.Translate(Vector2.up * translatedDistanceUp * Time.deltaTime);
         }
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(1);
 
     }
 
