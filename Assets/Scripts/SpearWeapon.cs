@@ -41,6 +41,7 @@ public class SpearWeapon : MonoBehaviour
     void FixedUpdate()
     {
 
+        spearEnabled = true;
         if (spearEnabled)
         {
             Debug.Log("Enabled");
@@ -52,9 +53,9 @@ public class SpearWeapon : MonoBehaviour
             }
             if (Input.GetKeyDown(spearKey))
             {
+                Debug.Log("Spear Fired");
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 spearForward = true;
-                Debug.Log("Spear Fired");
                 spearFiring = true;
                 transform.position = new Vector2(player.transform.position.x + 1.1f, player.transform.position.y + 0.57f);
                 gameObject.GetComponent<Renderer>().enabled = true;
