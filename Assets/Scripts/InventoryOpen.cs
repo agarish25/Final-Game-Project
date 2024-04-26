@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -70,7 +71,7 @@ public class InventoryOpen : MonoBehaviour
             {
                 if (InventoryItemData.equippedData[a] == 2)
                 {
-                    i = a;
+                   i = a;
                 }
             }
             d.transform.localPosition = new Vector2(-90 + 60 * i, -120);

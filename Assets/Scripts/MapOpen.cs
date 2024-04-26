@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class MapOpen : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class MapOpen : MonoBehaviour
     public GameObject InventoryPanel;
     public GameObject healthPanel;
     public GameObject hotbar;
+    public TextMeshProUGUI mapControlText;
     [SerializeField]
     KeyCode m;
     public bool pause = false;
