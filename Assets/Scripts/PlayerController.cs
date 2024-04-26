@@ -130,7 +130,11 @@ public class PlayerController : MonoBehaviour
                     timeHeld += Time.deltaTime;
             }
             if (!grapplerStick) { 
-                if (Input.GetKeyUp(up) && (isOnGround))
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    GetComponent<Rigidbody2D>().AddForce(Vector3.up * jumpForce * 0.5f, ForceMode2D.Impulse);
+                }
+                else if (Input.GetKeyUp(up) && (isOnGround))
                 {
                     if (timeHeld > 0.9)
                         timeHeld = 0.9f;
