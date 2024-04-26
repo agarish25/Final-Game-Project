@@ -5774,7 +5774,7 @@ GameObject:
   - component: {fileID: 490482802}
   m_Layer: 0
   m_Name: Moving Floorpiece
-  m_TagString: Ground
+  m_TagString: Moving Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6374,7 +6374,7 @@ GameObject:
   - component: {fileID: 606060680}
   m_Layer: 0
   m_Name: Moving Floorpiece
-  m_TagString: Ground
+  m_TagString: Moving Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11868,7 +11868,7 @@ GameObject:
   - component: {fileID: 1074688353}
   m_Layer: 0
   m_Name: Moving Floorpiece
-  m_TagString: Ground
+  m_TagString: Moving Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13127,7 +13127,7 @@ GameObject:
   - component: {fileID: 1177745973}
   m_Layer: 0
   m_Name: Moving Floorpiece
-  m_TagString: Ground
+  m_TagString: Moving Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18816,7 +18816,7 @@ GameObject:
   - component: {fileID: 1800164998}
   m_Layer: 0
   m_Name: Moving Floorpiece
-  m_TagString: Ground
+  m_TagString: Moving Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20119,7 +20119,7 @@ GameObject:
   - component: {fileID: 1872823954}
   m_Layer: 0
   m_Name: Moving Floorpiece
-  m_TagString: Ground
+  m_TagString: Moving Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

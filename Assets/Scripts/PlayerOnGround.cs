@@ -6,6 +6,7 @@ public class PlayerOnGround : MonoBehaviour
 {
     public PlayerController playerController;
     public GameObject player;
+    public float platformGap;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,7 @@ public class PlayerOnGround : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Respawn"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Respawn") || collision.gameObject.CompareTag("Moving Platform"))
         {
             playerController.isOnGround = true;
         }
@@ -27,15 +28,19 @@ public class PlayerOnGround : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Respawn"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Respawn") || collision.gameObject.CompareTag("Moving Platform"))
         {
             playerController.isOnGround = true;
+            if (collision.gameObject.CompareTag("Moving Platform"))
+            {
+               // transform.position = new Vector2(transform.position.x + )
+            }
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Respawn"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Respawn") || collision.gameObject.CompareTag("Moving Platform"))
         {
             playerController.isOnGround = false;
             if (playerController.doubleJumpActive)
