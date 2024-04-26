@@ -1770,7 +1770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158646607}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -209.12, y: 36.23, z: 0.76133823}
+  m_LocalPosition: {x: -210.21, y: 29.96, z: 0.76133823}
   m_LocalScale: {x: 1.0389631, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3365,7 +3365,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 318946493}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -204.8, y: 42.5, z: 0.76133823}
+  m_LocalPosition: {x: -205.71, y: 37.01, z: 0.76133823}
   m_LocalScale: {x: 1.1135988, y: 7.35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4055,7 +4055,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393630553}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -198.69, y: 29.24, z: 0.76133823}
+  m_LocalPosition: {x: -198.69, y: 27.42, z: 0.76133823}
   m_LocalScale: {x: 1.1135988, y: 15.343125, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11088,7 +11088,7 @@ MonoBehaviour:
   Player: {fileID: 1952243508}
   grapplerStick: 0
   grapplerEnabled: 0
-  grappleExitForce: 1.1
+  grappleExitForce: 0.8
 --- !u!50 &1028803743
 Rigidbody2D:
   serializedVersion: 4
@@ -15026,7 +15026,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395000755}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -211.4, y: 37, z: 0.76133823}
+  m_LocalPosition: {x: -212.42, y: 30.76, z: 0.76133823}
   m_LocalScale: {x: 1.1135988, y: 7.35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16673,7 +16673,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1652829854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -201.63, y: 27.06, z: 0}
+  m_LocalPosition: {x: -201.63, y: 17.29, z: 0}
   m_LocalScale: {x: 1, y: 3.69997, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18559,7 +18559,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796820575}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -207.8, y: 27.7, z: 0}
+  m_LocalPosition: {x: -206.56, y: 25.15, z: 0}
   m_LocalScale: {x: 1, y: 5.318707, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
