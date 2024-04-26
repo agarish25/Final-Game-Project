@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey(r))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            transform.position = new Vector2(xSpawn, ySpawn);
         }
         if (transform.position.y < -30)
         {
