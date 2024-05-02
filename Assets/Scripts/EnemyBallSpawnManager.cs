@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyBallSpawnManager : MonoBehaviour
 {
     public GameObject ballPrefab;
-    public GameObject Enemy;
+    public Transform ballPos;
 
     private float startDelay = 1.0f;
     private float spawnInterval = 4.0f;
