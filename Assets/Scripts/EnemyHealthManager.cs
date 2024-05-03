@@ -27,6 +27,6 @@ public class EnemyHealthManager : MonoBehaviour
         {
             Destroy(overallBar);
         }
-        healthBar.fillAmount = EnemyController.health / 100.0f; 
+        healthBar.fillAmount = EnemyController.health / 100.0f;
     }
 }

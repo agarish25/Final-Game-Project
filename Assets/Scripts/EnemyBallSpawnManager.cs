@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class EnemyBallSpawnManager : MonoBehaviour
 {
-    public GameObject ballPrefab;
-    public Transform ballPos;
+    public GameObject bulletPrefab;
+    public Transform bulletPos;
 
+    private float timer;
     private float startDelay = 1.0f;
     private float spawnInterval = 4.0f;
 
@@ -20,16 +21,16 @@ public class EnemyBallSpawnManager : MonoBehaviour
     {
         change = 0;
         increment = 10;
-        spawnPosX = Enemy.transform.position.x;
+        /*spawnPosX = Enemy.transform.position.x;
         spawnPosY = Enemy.transform.position.y;
         InvokeRepeating("SpawnRandomBall", startDelay, spawnInterval);
-
+        */
     }
 
     // Update is called once per frame
     void Update()
     {
-        spawnPosX = Enemy.transform.position.x;
+        /*spawnPosX = Enemy.transform.position.x;
         spawnPosY = Enemy.transform.position.y;
         if (change < 200)
         {
@@ -37,8 +38,21 @@ public class EnemyBallSpawnManager : MonoBehaviour
             ballPrefab.transform.position = new Vector2(spawnPosX + change, spawnPosY);
         } else
         {
-            //Destroy(ballPrefab);
+            Destroy(ballPrefab);
+        }*/
+
+        timer += Time.deltaTime;
+
+        if (timer > 2)
+        {
+            timer = 0;
+            shoot();
         }
+    }
+
+    void shoot()
+    {
+        Instantiate(bulletPrefab, bulletPos.position, Quaternion.identity);
     }
     void SpawnRandomBall()
     {
@@ -47,6 +61,6 @@ public class EnemyBallSpawnManager : MonoBehaviour
         Vector3 spawnPos = new Vector3(spawnPosX + 0.3f, spawnPosY, 0);
 
         // instantiate ball at random spawn location
-        Instantiate(ballPrefab, spawnPos, ballPrefab.transform.rotation);
+        //Instantiate(ballPrefab, spawnPos, ballPrefab.transform.rotation);
     }
 }
