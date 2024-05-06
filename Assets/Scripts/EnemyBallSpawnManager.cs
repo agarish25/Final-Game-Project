@@ -21,29 +21,14 @@ public class EnemyBallSpawnManager : MonoBehaviour
     {
         change = 0;
         increment = 10;
-        /*spawnPosX = Enemy.transform.position.x;
-        spawnPosY = Enemy.transform.position.y;
-        InvokeRepeating("SpawnRandomBall", startDelay, spawnInterval);
-        */
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*spawnPosX = Enemy.transform.position.x;
-        spawnPosY = Enemy.transform.position.y;
-        if (change < 200)
-        {
-            change += increment;
-            ballPrefab.transform.position = new Vector2(spawnPosX + change, spawnPosY);
-        } else
-        {
-            Destroy(ballPrefab);
-        }*/
-
         timer += Time.deltaTime;
 
-        if (timer > 2)
+        if (timer > 4)
         {
             timer = 0;
             shoot();
