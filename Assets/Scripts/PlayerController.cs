@@ -319,6 +319,12 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
             coins++;
         }
+
+        if (collision.gameObject.CompareTag("EnemyBullet"))
+        {
+            Destroy(collision.gameObject);
+            PlayerHealthManager.healthAmount -= 10;
+        }
     }
 
     IEnumerator DoorCountdownRoutine(Collision2D collision)
