@@ -323,7 +323,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("EnemyBullet"))
         {
             Destroy(collision.gameObject);
-            PlayerHealthManager.healthAmount -= 10;
+            PlayerHealthManager.healthAmount -= 20;
         }
     }
 
