@@ -24,7 +24,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if ((collision.gameObject.CompareTag("Spear")) && (collision.gameObject.GetComponent<Renderer>().enabled == true))
+        if (((collision.gameObject.CompareTag("Spear")) || (collision.gameObject.CompareTag("Player"))) && (collision.gameObject.GetComponent<Renderer>().enabled == true))
         {
             health -= 25;
             damageTaken = true;
