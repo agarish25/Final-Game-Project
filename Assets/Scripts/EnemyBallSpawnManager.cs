@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyBallSpawnManager : MonoBehaviour
 {
+    public GameObject player;
     public GameObject bulletPrefab;
     public Transform bulletPos;
 
@@ -42,8 +43,12 @@ public class EnemyBallSpawnManager : MonoBehaviour
     void SpawnRandomBall()
     {
         spawnInterval = Random.Range(3.0f, 5.0f);
-
-        Vector3 spawnPos = new Vector3(spawnPosX + 0.3f, spawnPosY, 0);
+        if (player.transform.position.x < bulletPos.position.x) {
+            Vector3 spawnPos = new Vector3(spawnPosX - 1.0f, spawnPosY, 0);
+        } else if (player.transform.position.x > bulletPos.position.x) {
+            Vector3 spawnPos = new Vector3(spawnPosX + 0.3f, spawnPosY, 0);
+        }
+            
 
         // instantiate ball at random spawn location
         //Instantiate(ballPrefab, spawnPos, ballPrefab.transform.rotation);
